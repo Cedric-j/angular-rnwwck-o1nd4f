@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartService } from './cart.service';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { CartService } from './cart.service';
       { path: '', component: ProductListComponent },
       // Définition d'une route pour l'url spécifique par produit => On renvoie vers ProductDetailsComponent
       { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'cart', component: CartComponent },
     ])
   ],
   declarations: [
@@ -25,7 +27,8 @@ import { CartService } from './cart.service';
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService]
