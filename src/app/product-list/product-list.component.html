@@ -1,0 +1,32 @@
+<h2>Products</h2>
+
+<!-- productId varie dans la plage des indes -->
+<div *ngFor="let product of products; index as productId">
+  <h3>
+    <!-- définition du router vers /products/productId (productId est donc un nombre de 0 à n qui sert d'index à l'array)-->
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">>
+      {{ product.name }}
+    </a>
+  </h3>
+
+    <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+    <button (click)="share()">
+    Share
+  </button>
+
+<!-- On passe le product qui sera pris en input dans product-alert -->
+<!-- Sur l'event "notify", declencher la methode "onNotify()" -->
+<app-product-alerts
+  [product]="product"
+  (notify)="onNotify()">
+</app-product-alerts>
+
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

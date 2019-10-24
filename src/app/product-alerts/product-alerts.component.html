@@ -1,0 +1,4 @@
+<!-- Sur clic, on emet l'evenement appele "notify" -->
+<p *ngIf="product.price > 700">
+  <button (click)="notify.emit()">Notify Me</button>
+</p>
